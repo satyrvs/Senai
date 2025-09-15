@@ -1,17 +1,74 @@
 
+const prompt = require('prompt-sync')({ sigint: true });
+
+var opt;
+var estoque;
 function saldo() {
-    var estoque = parseInt(prompt("Informar saldo inicial"));
+    estoque = parseInt(prompt("Informar saldo inicial: "));
     // var cria uma variável global
     //parseint converte string em número inteiro e ainda verifica de é um número válido
     while (isNaN(estoque)) {
         // isNaN verifica se o valor não é um número
-        document.write(estoque);
-        estoque = parseInt(prompt("O Valor inserido é inválido. Por favor, insira um número."));
+        //document.write(estoque);
+        console.log(estoque);
+        estoque = parseInt(prompt("O Valor inserido é inválido. Por favor, insira um número: "));
     }
-    document.write("Saldo inicial: " + estoque + "<br>");
+    //document.write("Saldo inicial: " + estoque + "</br>");
+    console.log("Saldo inicial: " + estoque + "</br>");
 }
 saldo();
 
+function option() {
+    opt = parseInt(prompt(`0 para Encerrar / 1 para Adicionar / 2 para Remover do estoque: </br>
+        Informe a opção desejada: `));
+    while (isNaN(opt)) {
+        console.log("A opção selecionada é inválida");
+        //document.write("A opção selecionada é inválida");
+        opt = parseInt(prompt((`0 paraEncerrar / 1 para Adicionar / 2 para Remover do estoque: </br>
+        Informe a opção desejada: `)));
+    }
+    console.log("Opção escolhida: " + opt);
+}
+//option();
+
+function adiciona() {
+    var add = parseInt(prompt("Informe a quantidade a adicionar: "));
+    while (isNaN(add)) {
+        console.log("A quantidade inserida é inválida");
+        add = parseInt(prompt("Informe a quantidade a adicionar: "));
+    }
+    estoque = estoque + add;
+    console.log("Saldo atualizado: " + estoque);
+    //document.write("Saldo atualizado: " + estoque);
+    option();
+}   
+
+function remove() {
+    var rem = parseInt(prompt("Informe a quantidade a remover: "));
+    while (isNaN(rem)) {
+        console.log("A quantidade inserida é inválida");
+        rem = parseInt(prompt("Informe a quantidade a remover: "));
+    }
+    estoque = estoque - rem;
+    console.log("Saldo atualizado: " + estoque);
+    //document.write("Saldo atualizado: " + estoque);
+    option();
+}
+
+do {
+    option();
+    switch (opt) {
+        case 0:
+            console.log("Encerrando...");
+            break;
+        case 1:
+            adiciona ();
+            break;
+        case 2:
+            remove ();
+            break;
+    }
+}while (opt != 0);
 
 
 
