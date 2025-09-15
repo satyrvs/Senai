@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <script>
+        // Aqui você pode adicionar seu código JavaScript
+        var estoque = parseInt(prompt("Informar saldo inicial"));
+        // var cria uma variável global
+        //parseint converte string em número inteiro e ainda verifica de é um número válido
+        if (isNaN(estoque)) {
+        // isNaN verifica se o valor não é um número
+            
+            document.write("Valor inválido. Por favor, insira um número.");
+        } else {
+            document.write("Saldo inicial: " + estoque + "<br>");
+            var opcao;
+            do {
+                opcao = prompt("Escolha uma opção:" </br>
+                                "0 - Encerrar" </br>
+                                "1 - Entrada" </br>
+                                "2 - Saída");
+                switch (opcao) {
+                    case '1':
+                        var entrada = parseInt(prompt("Informe a quantidade de entrada:"));
+                        if (!isNaN(entrada) && entrada > 0) {
+                            estoque += entrada;
+                            document.write("Nova quantidade em estoque: " + estoque + "<br>");
+                        } else {
+                            document.write("Valor inválido para entrada.<br>");
+                        }
+                        break;
+                    case '2':
+                        var saida = parseInt(prompt("Informe a quantidade de saída:"));
+                        if (!isNaN(saida) && saida > 0) {
+                            if (saida <= estoque) {
+                                estoque -= saida;
+                                document.write("Nova quantidade em estoque: " + estoque + "<br>");
+                            } else {
+                                document.write("Estoque insuficiente para essa saída.<br>");
+                            }
+                        } else {
+                            document.write("Valor inválido para saída.<br>");
+                        }
+                        break;
+                    case '3':
+                        document.write("Encerrando o programa.<br>");
+                        break;
+                    default:
+                        document.write("Opção inválida. Tente novamente.<br>");
+                }
+            } while (opcao !== '3');
+        }
+    </script>
+</head>
+<body>
+    <h1>Controle de Estoque</h1>
+</body>
+</html>
