@@ -13,36 +13,47 @@
                 //parseint converte string em número inteiro e ainda verifica de é um número válido
                 while (isNaN(estoque)) {
                     // isNaN verifica se o valor não é um número
-                    document.write(estoque);
+                    //document.write(estoque);
                     //console.log(estoque);
+                    //alert(estoque);
                     estoque = parseInt(prompt("O Valor inserido é inválido. Por favor, insira um número: "));
                 }
-                document.write("Saldo inicial: " + estoque + "</br>");
+                alert("Saldo inicial: " + estoque + "\n");
+                //document.write("Saldo inicial: " + estoque + "</br>");
                 //console.log("Saldo inicial: " + estoque + "</br>");
             }
             saldo();
 
             function option() {
-                opt = parseInt(prompt(`0 para Encerrar / 1 para Adicionar / 2 para Remover do estoque: "</br>"
-                    Informe a opção desejada: `));
+                opt = parseInt(prompt(`
+                                        0 para Encerrar
+                                        1 para Adicionar
+                                        2 para Remover   
+                                        Informe a opção desejada: `));
                 while (isNaN(opt)) {
                     //console.log("A opção selecionada é inválida");
-                    document.write("A opção selecionada é inválida");
-                    opt = parseInt(prompt((`0 para Encerrar / 1 para Adicionar / 2 para Remover do estoque: "</br>"
-                    Informe a opção desejada: `)));
+                    alert ("A opção selecionada é inválida");
+                    //document.write("A opção selecionada é inválida");
+                    opt = parseInt(prompt((`
+                                        0 para Encerrar
+                                        1 para Adicionar
+                                        2 para Remover   
+                                        Informe a opção desejada: `)));
                 }
-                document.write ("Opção escolhida: " + opt);
+                //document.write ("Opção escolhida: " + opt);
+                alert("Opção escolhida: " + opt);
             }
             //option();
 
             function adiciona() {
                 var add = parseInt(prompt("Informe a quantidade a adicionar: "));
                 while (isNaN(add)) {
-                    document.write("A quantidade inserida é inválida");
+                    alert("A quantidade inserida é inválida");
+                    //document.write("A quantidade inserida é inválida");
                     add = parseInt(prompt("Informe a quantidade a adicionar: "));
                 }
                 estoque = estoque + add;
-                document.write("Saldo atualizado: " + estoque);
+                alert  ("Saldo atualizado: " + estoque);
                 //document.write("Saldo atualizado: " + estoque);
                 option();
             }   
@@ -50,11 +61,12 @@
             function remove() {
                 var rem = parseInt(prompt("Informe a quantidade a remover: "));
                 while (isNaN(rem)) {
-                    document.write("A quantidade inserida é inválida");
+                    alert("A quantidade inserida é inválida");
+                    //document.write("A quantidade inserida é inválida");
                     rem = parseInt(prompt("Informe a quantidade a remover: "));
                 }
                 estoque = estoque - rem;
-                document.write("Saldo atualizado: " + estoque);
+                alert("Saldo atualizado: " + estoque);
                 //document.write("Saldo atualizado: " + estoque);
                 option();
             }
@@ -63,7 +75,8 @@
                 option();
                 switch (opt) {
                     case 0:
-                        document.write("Encerrando...");
+                        alert("Encerrando...");
+                        //document.write("Encerrando...");
                         break;
                     case 1:
                         adiciona ();
@@ -73,6 +86,7 @@
                         break;
                 }
             }while (opt != 0);
+            document.write("Saldo atualizado: " + estoque);
     </script>
 </head>
 <body>
