@@ -1,151 +1,72 @@
-/* style.css - Código básico para iniciar um projeto
-    Coloque este arquivo em /css/style.css e link no HTML:
-    <link rel="stylesheet" href="css/style.css">
-*/
-
-/* Reset simples */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote, dl {
-  margin: 0;
-  padding: 0;
-}
-
-ul { list-style: none; }
-
-/* Variáveis (cores, espaçamentos, tipografia) */
-:root {
-  --bg: #ffffff;
-  --surface: #f7f7f8;
-  --text: #222222;
-  --muted: #6b7280;
-  --primary: #2563eb;
-  --primary-contrast: #ffffff;
-  --radius: 8px;
-  --container-max: 1100px;
-  --gap: 1rem;
-  --base-font: 16px;
-  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-}
-
-/* Base */
-html {
-  font-size: var(--base-font);
-  background: var(--bg);
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 body {
-  font-family: var(--font-family);
-  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  width: 512px;
 }
 
-/* Container centralizado */
-.container {
-  width: 90%;
-  max-width: var(--container-max);
-  margin-left: auto;
-  margin-right: auto;
-  padding: calc(var(--gap) * 1);
-}
-
-/* Tipografia */
-h1 { font-size: 2rem; line-height: 1.2; margin-bottom: 0.5rem; }
-h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-p { margin-bottom: 1rem; color: var(--muted); }
-
-/* Layout básico (header, main, footer) */
 header {
-  background: var(--surface);
-  padding: calc(var(--gap) * 1);
-  border-bottom: 1px solid #e6e6e9;
-}
-
-nav {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-}
-
-main {
-  padding: calc(var(--gap) * 1.5) 0;
-}
-
-footer {
-  padding: calc(var(--gap) * 1);
-  border-top: 1px solid #e6e6e9;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-/* Botões */
-.btn {
-  display: inline-block;
-  padding: 0.5rem 0.75rem;
-  background: var(--primary);
-  color: var(--primary-contrast);
-  border: none;
-  border-radius: calc(var(--radius) / 2);
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 600;
+  background-color: #2563eb;
+  padding: 20px;
+  width: 512px;
   text-align: center;
 }
 
-.btn.secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid #ddd;
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* Formulários */
-input[type="text"],
-input[type="email"],
-textarea,
-select {
+nav a:hover{
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background: #fff;
-  font: inherit;
+  margin: 0 auto;
 }
 
-label {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
+#banner {
+  width: 100%;
+  /* margin-bottom: 20px; */
 }
 
-/* Imagens responsivas */
-img {
-  max-width: 100%;
+#banner img {
+  width: 512px;
   height: auto;
-  display: block;
 }
 
-/* Utilitários */
-.text-center { text-align: center; }
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mb-1 { margin-bottom: 0.5rem; }
-.hidden { display: none !important; }
-
-/* Responsividade básica */
-@media (min-width: 768px) {
-  .grid-2 {
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     gap: calc(var(--gap) * 1.5);
-  }
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-@media (min-width: 1024px) {
-  h1 { font-size: 2.5rem; }
+#gallery figure {
+  width:30px;
+  background-color: blueviolet;
+  /*margin: 0;
+  padding: 0;*/
+}
+
+#gallery img {
+  width:280px;
+  height: 230px;
+  margin: auto;
+}
+
+footer {
+  background-color: #01050f;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
